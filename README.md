@@ -45,7 +45,7 @@ This world uses the permanent identity hash generated from the GUI setup.
 
 
 
-Example 4DIeBZqOIG38ALUK0cEdlk8QXtXR6usLUFEZ2oaO8HM=
+Example Hash: 4DIeBZqOIG38ALUK0cEdlk8QXtXR6usLUFEZ2oaO8HM=
 
 
 ⚠️ *Wrong or missing hash causes floating terrain, broken physics, and client desync.*
@@ -56,7 +56,7 @@ Example 4DIeBZqOIG38ALUK0cEdlk8QXtXR6usLUFEZ2oaO8HM=
 
 Download the full PDF explaining the correct hash generation process:
 
-👉 **No_Mans_Land_Server_Hash_Guide.pdf**  
+👉 **[Download the PDF](docs/No_Mans_Land_Server_Hash_Guide.pdf)**  
 
 
 ---
@@ -99,7 +99,7 @@ Then connect via client using:
 
 
 
-4DIeBZqOIG38ALUK0cEdlk8QXtXR6usLUFEZ2oaO8HM=
+Example Hash: 4DIeBZqOIG38ALUK0cEdlk8QXtXR6usLUFEZ2oaO8HM=
 
 
 ---
