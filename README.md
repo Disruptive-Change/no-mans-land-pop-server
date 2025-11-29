@@ -1,4 +1,3 @@
-✅ COPY-THIS-INTO-README.md (Dark Theme)
 <!-- Banner -->
 <p align="center">
   <img src="assets/banner.png" alt="No Mans Land — Plains of Pain Dedicated Server" width="100%">
@@ -46,7 +45,7 @@ This world uses the permanent identity hash generated from the GUI setup.
 
 
 
-4DIeBZqOIG38ALUK0cEdlk8QXtXR6usLUFEZ2oaO8HM=
+Example 4DIeBZqOIG38ALUK0cEdlk8QXtXR6usLUFEZ2oaO8HM=
 
 
 ⚠️ *Wrong or missing hash causes floating terrain, broken physics, and client desync.*
@@ -58,7 +57,7 @@ This world uses the permanent identity hash generated from the GUI setup.
 Download the full PDF explaining the correct hash generation process:
 
 👉 **No_Mans_Land_Server_Hash_Guide.pdf**  
-(Place it in `/docs/` inside repo once uploaded)
+
 
 ---
 
@@ -112,23 +111,7 @@ Then connect via client using:
   <img src="assets/screenshot4.png" width="45%">
 </p>
 
-More screenshots can go into `assets/screenshots/`.
 
----
-
-## 📂 Repository Structure
-
-
-
-/assets/
-banner.png
-screenshot1.png
-screenshot4.png
-
-/docs/
-No_Mans_Land_Server_Hash_Guide.pdf
-
-/README.md
 
 
 ---
@@ -146,3 +129,141 @@ Feel free to open issues or PRs if you'd like to add:
 
 ## 🎮 Welcome to No Mans Land  
 A harsh wasteland, but a stable one — because the hash is correct.  
+
+📥 Plains of Pain Dedicated Server — Download & Install Instructions
+
+Follow these steps to install and run the Plains of Pain dedicated server for No Mans Land on Windows Server 2022.
+
+🔧 1. Install SteamCMD
+
+Download SteamCMD from Valve:
+
+👉 https://developer.valvesoftware.com/wiki/SteamCMD#Windows
+
+Extract it to:
+
+C:\SteamCMD\
+
+
+Run once to let it update:
+
+C:\SteamCMD\steamcmd.exe
+
+📦 2. Download the Plains of Pain Dedicated Server
+
+Inside SteamCMD, enter:
+
+login anonymous
+app_update 2227360 validate
+quit
+
+
+Your server files will appear in:
+
+C:\SteamCMD\steamapps\common\PlainsOfPainDedicated\
+
+
+Move them where you want your live server to live:
+
+C:\PoPServer\
+
+⚙️ 3. Configure the Server (World Settings Must Match GUI Setup)
+
+Your world No Mans Land uses a specific seed, map size, difficulty, and worldId.
+
+These MUST match what was used when the GUI server generated your permanent hash.
+
+You can configure via:
+
+Option A — custom.json
+
+Edit:
+
+C:\PoPServer\configs\custom.json
+
+
+Example:
+
+{
+  "serverName": "No Mans Land",
+  "worldId": 1,
+  "mapId": 0,
+  "seed": 12345,
+  "difficulty": 2,
+  "worldSize": 41,
+  "port": 7777,
+  "queryPort": 27016,
+  "maxPlayers": 10
+}
+
+Option B — run_server.bat
+
+Your batch file must include:
+
+PlainsOfPain.exe -nographics -batchmode -ignorecompilererrors -config "configs/custom.json"
+
+🔐 4. Use the Correct World Sync Hash
+
+When joining the server, enter:
+
+4DIeBZqOIG38ALUK0cEdlk8QXtXR6usLUFEZ2oaO8HM=
+
+
+This hash:
+
+✔ Identifies your exact world
+✔ Must remain unchanged
+✔ Prevents floating terrain & physics desync
+✔ Was generated correctly from your GUI setup
+
+Never modify this hash.
+
+▶️ 5. Start the Dedicated Server
+
+Double-click:
+
+run_server.bat
+
+
+Or create a shortcut for easier launching.
+
+You should see:
+
+World loads
+
+Networking initializes
+
+Ports open (7777 + 27016)
+
+No GUI
+
+Headless mode running
+
+🎮 6. Join the Server
+
+In Plains of Pain:
+
+Open Multiplayer
+
+Enter your Windows server’s public IP & port
+
+When prompted, paste the hash:
+
+4DIeBZqOIG38ALUK0cEdlk8QXtXR6usLUFEZ2oaO8HM=
+
+
+Boom — you’re in the real No Mans Land world.
+
+🛠️ 7. (Optional) Windows Firewall Rules
+
+Allow inbound:
+
+UDP 7777
+UDP 27016
+
+🧪 8. (Optional) Test Connectivity
+
+From another Windows machine:
+
+Test-NetConnection -ComputerName <SERVER_IP> -Port 7777
+
